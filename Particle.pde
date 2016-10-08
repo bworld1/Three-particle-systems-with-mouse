@@ -46,7 +46,7 @@ class Particle {
       velocity.x = velocity.x * -.8;
       lifeSpan -= 20;
     }
-    if (( location.y > height - 18) || (location.y < 0)) {
+    if (( location.y > height - 18) || (location.y < 18)) {
       velocity.y = velocity.y * -.8;
       lifeSpan -= 20;
     }
