@@ -7,14 +7,21 @@ class ParticleSystem {
     origin = location.copy();
     colors = new ArrayList<Color>();
     particles = new ArrayList<Particle>();
-      colors.add(new Color(int(random(50,255)), int(random(50,255)), int(random(50,255))));
-      particles.add(new Particle(origin)); 
   }
   
   void addParticle() {
-    colors.add(new Color(int(random(50,255)), int(random(50,255)), int(random(50,255))));
+    colors.add(new Color(int(random(200,255)), int(random(0,255)), int(random(0,255))));
     particles.add(new Particle(origin));
+  }
     
+  void addSquareParticle() {
+    colors.add(new Color(int(random(0,255)), int(random(200,255)), int(random(0,255))));
+    particles.add(new Squares(origin));
+  }  
+    
+  void addTriangleParticle() {
+    colors.add(new Color(int(random(0,255)), int(random(0,255)), int(random(150,255))));
+    particles.add(new Triangles(origin));    
   }
   
   void applyForce(PVector force) {

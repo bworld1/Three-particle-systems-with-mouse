@@ -1,4 +1,4 @@
-float locX, locY, objMass, pntMass;
+float locX, locY, pntMass;
 int lifeSpan = 255;
 
 class Particle {
@@ -10,7 +10,6 @@ class Particle {
     acceleration = new PVector(random(0.06, 2.4), random(0.06, 6.0));
     velocity = new PVector(random(-10,10), random(-8,8));
     location = l.copy();
-    objMass = 500;
     pntMass = 100;
   }
   
@@ -46,17 +45,15 @@ class Particle {
       velocity.x = velocity.x * -.8;
       lifeSpan -= 20;
     }
-    if (( location.y > height - 18) || (location.y < 0)) {
+    if (( location.y > height - 18) || (location.y < 18)) {
       velocity.y = velocity.y * -.8;
       lifeSpan -= 20;
     }
   }
   
   void display() {
-//    println(c.red + "  " + c.green + "  " + c.blue);
     stroke(0, 255);
     strokeWeight(2);
-
     fill(nRed, nGreen, nBlue, 255);
     ellipse(location.x, location.y, 18, 18);
   }
